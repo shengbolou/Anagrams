@@ -1,2 +1,3 @@
 # Anagrams
-Anagram project
+
+find anagrams from dictionary

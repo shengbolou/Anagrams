@@ -1,0 +1,8 @@
+Group 12069: debra, debar, bread, beard, barde, ardeb, 
+Group 20960: trace, recta, react, crate, cater, caret, 
+Group 33458: pleat, plate, petal, palet, lepta, leapt, 
+Group 33512: teals, stela, steal, stale, slate, setal, least, 
+Group 33538: vela, veal, vale, leva, lave, elva, 
+Group 36915: rial, rail, lira, liar, lair, aril, 
+Group 62026: siren, serin, risen, rinse, resin, reins, 
+Group 62776: ulster, sutler, rustle, result, lustre, luster, 
