@@ -25,7 +25,7 @@
  For example, "paradisiacally" and "paradisaically", they both have the same sorted form "aaaacdiillprsy".
  
  
-##Runtime
+###Runtime
  Counting-Sort runs in linear time which is O(n+26).
  Merge-Sort runs in O(nlogn) time.
  and writing into files takes O(n) time.
