@@ -4,7 +4,7 @@
 ##Find anagrams from dictionary
 
 
-##Description
+###Description
  My approach is first sort a single word, for example, the word "hello" will become "ehllo".
  Then I sort the whole list of words. At then end, if some words are anagrams, they must have
  the same sorted form and they must be next to each other.
@@ -20,12 +20,12 @@
  Finally I go through the list and write the anagram groups out into files.
  
  
- ##Correctness
+###Correctness
  My method must be correct because if two words are anagrams, then they must have the same sorted form
  For example, "paradisiacally" and "paradisaically", they both have the same sorted form "aaaacdiillprsy".
  
  
- ##Runtime
+##Runtime
  Counting-Sort runs in linear time which is O(n+26).
  Merge-Sort runs in O(nlogn) time.
  and writing into files takes O(n) time.
