@@ -116,7 +116,7 @@ public class Main {
 			//sort the whole list
 			MergeSort(store, 0, store.size()-1);
 			
-			System.out.println(store.size()-1);
+			//System.out.println(store.size()-1);
 			
 			//create a writer
 			PrintWriter writer = new PrintWriter("data/Anagram1.txt");
@@ -172,6 +172,8 @@ public class Main {
 
 				}
 			}
+			
+			System.out.println("There are " + anagramsCount+" anagram groups in this file");
 			
 			
 			//close fileWriter
