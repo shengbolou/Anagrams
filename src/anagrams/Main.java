@@ -46,7 +46,7 @@ public class Main {
 	
 	
 	/*
-	 * Merge-sort
+	 * Help method to sort the whole word list
 	 */
 	private static void MergeSort(ArrayList<Tuple> input, int p, int r){
 		if(p < r){
@@ -90,10 +90,10 @@ public class Main {
 	public static void main(String[] args) {
 		try {
 			//get the start time
-			int startTime = (int) System.nanoTime();
+			long startTime = System.nanoTime();
 			
 			// open fileReader
-			FileReader fr = new FileReader("data/dict1");
+			FileReader fr = new FileReader("data/dict2");
 			BufferedReader br = new BufferedReader(fr);
 			
 			
@@ -116,21 +116,18 @@ public class Main {
 			//sort the whole list
 			MergeSort(store, 0, store.size()-1);
 			
-			//System.out.println(store.size()-1);
-			
 			//create a writer
-			PrintWriter writer = new PrintWriter("data/Anagram1.txt");
+			PrintWriter writer = new PrintWriter("data/Anagram2.txt");
 			
-			
-			Tuple temp = store.get(1);
+			Tuple temp = store.get(0);
 			int Switch = 1;
 			int newline = 0;
 			//count for anagram groups
 			int anagramsCount = 0;
 			//write out anagram groups 
-			for(int z=2; z<store.size();z++){
+			for(int z=1; z<store.size();z++){
 				Tuple temp2 = store.get(z);
-				
+
 				//start of a new anagram group
 				if(temp2.get(1).equals(temp.get(1)) && Switch == 1){
 					anagramsCount++;
@@ -153,6 +150,23 @@ public class Main {
 					//print the new line
 					if(newline == 1)
 						writer.println("");
+					
+					//handle the special cases for the beginning of word list
+					//handle the case that the first element is empty
+					if(temp.get(1).equals("")){
+						temp = temp2;				
+					}
+					//handle the case that the first anagram group has only one element 
+					if(anagramsCount == 1){
+						writer.write("Group "+anagramsCount+": "+temp.get(0).toString()+", ");
+						writer.println("");
+						writer.println("");
+						temp = temp2;
+						Switch = 1;
+						newline = 0;
+						continue;
+					}
+					
 					
 					temp = temp2;
 					//we need to start write a new anagram group
@@ -183,7 +197,7 @@ public class Main {
 			br.close();
 
 			// use to calculate the time
-			int endTime = (int) System.nanoTime();
+			long endTime = System.nanoTime();
 			System.out.println("Took "+(endTime - startTime)*0.000000001 + " s"); 
 			
 		} catch (Exception e) {

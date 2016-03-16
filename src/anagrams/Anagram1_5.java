@@ -22,7 +22,7 @@ public class Anagram1_5 {
 			// if the anagram group contains more than five
 			//words, then write it to a new file
 			while ((tmp=br.readLine()) != null) {
-				if(tmp.split(",").length > 6 ){
+				if(tmp.split(",").length-1 > 5 ){
 					writer.write(tmp);
 					writer.println("");
 				}
